@@ -15,6 +15,6 @@ jobs:
       
     - name: Deploy changes to cloned repo
       run: |
-        cd https://github.com/Akshay-1804/cloned-repo
+        cd https://github.com/Akshay-1804/cloned-repo.git
         git pull origin main
         # You may need additional commands here depending on your setup
