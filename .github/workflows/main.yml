@@ -15,6 +15,5 @@ jobs:
         
       - name: Clone repository
         run: |
-          git clone https://github.com/Akshay-1804/cloned-repo.git
-          cd cloned-repo
+          cd D:
           git pull origin main
