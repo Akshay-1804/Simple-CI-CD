@@ -13,5 +13,5 @@ jobs:
         
       - name: Clone repository
         run: |
-          cd D:\Simple-CI-CD
+          cd D:\a\_temp\3cb2526f-954a-45f3-af3b-7f366b868060.ps1:2
           git pull origin main
