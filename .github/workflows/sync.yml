@@ -15,5 +15,5 @@ jobs:
         
       - name: Pull changes in cloned repo
         run: |
-          cd D:\cloned-repo
+          cd /d/cloned-repo
           git pull origin main
