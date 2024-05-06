@@ -1,39 +1,3 @@
-# # .github/workflows/ci-cd.yml
-# name: CI/CD Pipeline
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-
-#       - name: Install Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: '14'
-
-#       - name: Install dependencies
-#         run: npm install
-
-#       - name: Deploy to server
-#         run: |
-#           # Stop the existing server
-#           pm2 stop index.js || true
-          
-#           # Start the server
-#           pm2 start index.js --name "my-express-app"
-
-#           # Wait for server to start
-#           sleep 3
-
-
 # .github/workflows/ci-cd.yml
 name: CI/CD Pipeline
 
@@ -43,7 +7,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -58,5 +22,41 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Start server
-        run: node index.js
+      - name: Deploy to server
+        run: |
+          # Stop the existing server
+          pm2 stop index.js || true
+          
+          # Start the server
+          pm2 start index.js --name "my-express-app"
+
+          # Wait for server to start
+          sleep 3
+
+
+# .github/workflows/ci-cd.yml
+# name: CI/CD Pipeline
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Install Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '14'
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Start server
+#         run: node index.js
