@@ -15,5 +15,5 @@ jobs:
         
       - name: Clone repository
         run: |
-          cd D:
+          D:
           git pull origin main
