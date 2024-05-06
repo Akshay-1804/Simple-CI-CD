@@ -8,7 +8,11 @@ on:
 
 jobs:
   build:
+<<<<<<< HEAD
     runs-on: http://localhost:3000/
+=======
+    runs-on: ubuntu-latest
+>>>>>>> 6e233a43611b6f932f1562b1fe47c133aefd663e
 
     steps:
       - name: Checkout code
@@ -22,6 +26,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+<<<<<<< HEAD
+=======
+      - name: Run tests (if any)
+        run: npm test  # Add test script in package.json if needed
+
+>>>>>>> 6e233a43611b6f932f1562b1fe47c133aefd663e
       - name: Deploy to server
         run: |
           # Stop the existing server
@@ -31,4 +41,8 @@ jobs:
           pm2 start index.js --name "my-express-app"
 
           # Wait for server to start
+<<<<<<< HEAD
           sleep 3
+=======
+          sleep 3
+>>>>>>> 6e233a43611b6f932f1562b1fe47c133aefd663e
