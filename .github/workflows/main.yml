@@ -32,4 +32,4 @@
 #           git push origin main
 #         env:
 #             # Use the GitHub token to authenticate for pushing changes
-#             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            # GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
