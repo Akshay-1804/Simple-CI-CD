@@ -1,4 +1,4 @@
-name: Sync Changes
+name: Reflect Changes
 
 on:
   push:
@@ -6,15 +6,14 @@ on:
       - main
 
 jobs:
-  deploy:
+  reflect_changes:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout original repo
-      uses: actions/checkout@v2
-      
-    - name: Deploy changes to cloned repo
-      run: |
-        cd https://github.com/Akshay-1804/cloned-repo.git
-        git pull origin main
-        # You may need additional commands here depending on your setup
+      - name: Checkout original repo
+        uses: actions/checkout@v2
+        
+      - name: Pull changes in cloned repo
+        run: |
+          cd D:\cloned-repo
+          git pull origin main
