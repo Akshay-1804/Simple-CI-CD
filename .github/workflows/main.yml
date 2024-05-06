@@ -78,12 +78,12 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name "Your Name"
-          git config --global user.email "youremail@example.com"
+          git config --global user.name "Akshay-1824"
+          git config --global user.email "deoreakshay180499@gmail.com"
 
       - name: Fetch changes from original repository
         run: |
-          git remote add upstream <original_repository_url>
+          git remote add upstream https://github.com/Akshay-1804/Simple-CI-CD.git
           git fetch upstream
           git merge upstream/main --no-edit
 
