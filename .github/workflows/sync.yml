@@ -1,0 +1,20 @@
+name: Sync Changes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout original repo
+      uses: actions/checkout@v2
+      
+    - name: Deploy changes to cloned repo
+      run: |
+        cd D:\cloned-repo
+        git pull origin main
+        # You may need additional commands here depending on your setup
