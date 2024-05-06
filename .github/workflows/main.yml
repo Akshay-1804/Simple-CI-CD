@@ -89,3 +89,5 @@ jobs:
       - name: Push changes to forked repository
         run: |
           git push origin main
+        env:
+            GITHUB_TOKEN: ${{ secrets.my_key }}
