@@ -1,16 +1,16 @@
 # .github/workflows/ci-cd.yml
-name: CI/CD Pipeline
+# name: CI/CD Pipeline
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-#   build:
-#     runs-on: ubuntu-latest
+# jobs:
+# #   build:
+# #     runs-on: ubuntu-latest
 
-     steps:
+#      steps:
     #   - name: Checkout code
     #     uses: actions/checkout@v2
 
@@ -19,8 +19,8 @@ jobs:
     #     with:
     #       node-version: '14'
 
-       - name: Install dependencies
-        run: npm install
+    #    - name: Install dependencies
+    #     run: npm install
 
     #   - name: Deploy to server
     #     run: |
@@ -33,9 +33,6 @@ jobs:
     #       # Wait for server to start
     #       sleep 3
 
-
-# .github/workflows/ci-cd.yml
-# name: CI/CD Pipeline
 
 # on:
 #   push:
@@ -60,3 +57,36 @@ jobs:
 
 #       - name: Start server
 #         run: node index.js
+
+# .github/workflows/ci-cd.yml
+
+
+name: Sync with Original Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "youremail@example.com"
+
+      - name: Fetch changes from original repository
+        run: |
+          git remote add upstream <original_repository_url>
+          git fetch upstream
+          git merge upstream/main --no-edit
+
+      - name: Push changes to forked repository
+        run: |
+          git push origin main
